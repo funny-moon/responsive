@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #999;
+      }
+      #container {
+        width: 1200px;
+        margin: 0 auto;
+      }
+      #header {
+        height: 100px;
+        background: #a1ffc0;
+      }
+      #nav {
+        height: 100px;
+        background: #a1ffc0;
+      }
+      #main {
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+        grid-template-rows: 780px;
+      }
+      #main #aside {
+        background: #29b858;
+      }
+      #main #section {
+        background: #066927;
+      }
+      #main #article {
+        background: #ac47ff;
+      }
+      #footer {
+        height: 100px;
+        background: #00290e;
+      }
+
+      /* 미디어 쿼리 */
+      @media (max-width: 1300px) {
+        #container {
+          width: 90%;
+        }
+      }
+      @media (max-width: 768px) {
+        #container {
+          width: 100%;
+        }
+        #main {
+          grid-template-areas:
+            "aside section"
+            "article article";
+          grid-template-columns: 30% 70%;
+          grid-template-rows: 630px 150px;
+        }
+        #main #aside {
+          grid-area: aside;
+        }
+        #main #section {
+          grid-area: section;
+        }
+        #main #article {
+          grid-area: article;
+        }
+      }
+      @media (max-width: 480px) {
+        #main {
+          grid-template-areas:
+            "aside"
+            "section"
+            "article ";
+          grid-template-columns: 100%;
+          grid-template-rows: 200px 430px 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header"></div>
+      <div id="nav"></div>
+      <div id="main">
+        <div id="aside"></div>
+        <div id="section"></div>
+        <div id="article"></div>
+      </div>
+      <div id="footer"></div>
+    </div>
+  </body>
+</html>
